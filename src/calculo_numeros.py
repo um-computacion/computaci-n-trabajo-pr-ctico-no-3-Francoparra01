@@ -1,4 +1,5 @@
-from exceptions import ingrese_numero
+# src/calculo_numeros.py
+from exceptions import ingrese_numero, NumeroDebeSerPositivo
 
 def main():
     """
@@ -8,8 +9,8 @@ def main():
         try:
             numero = ingrese_numero()
             print(f"Número válido: {numero}")
-        except ValueError as e:
-            print(f"Error: {e}")
+        except ValueError:
+            print(f"Error: La entrada debe ser un número válido")
         except NumeroDebeSerPositivo as e:
             print(f"Error: {e}")
         except KeyboardInterrupt:
@@ -17,4 +18,4 @@ def main():
             break
 
 if __name__ == "__main__":
-    main() 
+    main()
